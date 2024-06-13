@@ -1,0 +1,12 @@
+.\objects\accel.o: accel.c
+.\objects\accel.o: .\RTE\Device\MKL46Z256VLH4\MKL46Z4.h
+.\objects\accel.o: C:\Users\ADMIN\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm0plus.h
+.\objects\accel.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdint.h
+.\objects\accel.o: C:\Users\ADMIN\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\accel.o: C:\Users\ADMIN\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\accel.o: C:\Users\ADMIN\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\accel.o: .\RTE\Device\MKL46Z256VLH4\system_MKL46Z4.h
+.\objects\accel.o: accel.h
+.\objects\accel.o: delay.h
+.\objects\accel.o: i2c.h
+.\objects\accel.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\math.h
