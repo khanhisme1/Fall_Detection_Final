@@ -98,6 +98,8 @@ void PORTC_PORTD_IRQHandler(void) {
 		if (state == NORMAL) {
 			state = FALL;
 			LCD_WriteChar('1', 0);
+		} else {
+			uint8_t temp = I2C_ReadRegister(MMA8451Q_ADDRESS, 0x16);
 		}
 		PORTC->ISFR |= (1 << INT1_PIN);
 		PORTC->PCR[INT1_PIN] |= 1 << IRQ_FLAG;

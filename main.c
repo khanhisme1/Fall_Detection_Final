@@ -8,7 +8,8 @@
 
 volatile uint8_t state;
 
-int main(void) {
+int main(void)
+{
 	LED_Init();
 	Switch_Init();
 	Systick_Init();
@@ -16,8 +17,8 @@ int main(void) {
 	I2C_Init();
 	INT1_Init();
 	MMA8451_Init();
-	
-    while (1) {
 
-    }
+	while (1)
+	{
+	}
 }

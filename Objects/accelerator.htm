@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\accelerator.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\accelerator.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Jun 13 09:58:08 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Jun 14 15:09:47 2024
 <BR><P>
 <H3>Maximum Stack Usage =         32 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -398,10 +398,6 @@ Global Symbols
 
 <P><STRONG><a name="[86]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[5c]"></a>GPIO_Init</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, switch.o(i.GPIO_Init))
-<BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
 <P><STRONG><a name="[5b]"></a>I2C_Init</STRONG> (Thumb, 92 bytes, Stack size 0 bytes, i2c.o(i.I2C_Init))
 <BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -416,6 +412,10 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = I2C_WriteRegister
 </UL>
 <BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MMA8451_Init
+</UL>
+
+<P><STRONG><a name="[5c]"></a>INT1_Init</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, switch.o(i.INT1_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[5a]"></a>LCD_Init</STRONG> (Thumb, 296 bytes, Stack size 0 bytes, lcd.o(i.LCD_Init))
@@ -441,7 +441,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[2b]"></a>PORTC_PORTD_IRQHandler</STRONG> (Thumb, 254 bytes, Stack size 8 bytes, switch.o(i.PORTC_PORTD_IRQHandler))
+<P><STRONG><a name="[2b]"></a>PORTC_PORTD_IRQHandler</STRONG> (Thumb, 284 bytes, Stack size 8 bytes, switch.o(i.PORTC_PORTD_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = PORTC_PORTD_IRQHandler &rArr; LCD_WriteChar
 </UL>
 <BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteChar
@@ -502,8 +502,8 @@ Global Symbols
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MMA8451_Init
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;INT1_Init
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Init
-<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
