@@ -5,7 +5,6 @@
 #include "led.h"
 #include "accel.h"
 #include "i2c.h"
-#include "uart.h"
 
 void Switch_Init(void) {
 	// Shutdown mode

@@ -8,7 +8,7 @@ void LED_Init(void) {
 	
 	// GPIO alternative function
 	PORTD->PCR[GREEN_LED] |= PORT_PCR_MUX(1);	// 1 << 8
-	PORTE->PCR[RED_LED] |= PORT_PCR_MUX(1);	// 1 << 8
+	PORTE->PCR[RED_LED] |= PORT_PCR_MUX(1);		// 1 << 8
 	
 	// Output mode
 	PTD->PDDR |= (1 << GREEN_LED);		// 1 << 5
