@@ -26,7 +26,7 @@ void I2C_WriteRegister(uint8_t device_address, uint8_t register_address, uint8_t
     I2C0->C1 |= I2C_C1_MST_MASK;	// 1 << 5
 	
 	//  Send device address with write bit
-    I2C0->D = device_address << 1;	// 0x1C
+    I2C0->D = device_address << 1;
     while (!(I2C0->S & I2C_S_IICIF_MASK));	// 1 << 1
     I2C0->S |= I2C_S_IICIF_MASK;
 	

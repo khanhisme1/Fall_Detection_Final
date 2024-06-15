@@ -12,4 +12,3 @@
 .\objects\switch.o: led.h
 .\objects\switch.o: accel.h
 .\objects\switch.o: i2c.h
-.\objects\switch.o: uart.h

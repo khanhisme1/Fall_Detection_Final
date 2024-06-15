@@ -13,26 +13,6 @@ void MMA8451_Init(void) {
 	I2C_WriteRegister(MMA8451Q_ADDRESS, XYZ_DATA_CFG, 0x01);
 	delay(1);
 	
-	//Raise Flag when free fall detected
-	I2C_WriteRegister(MMA8451Q_ADDRESS, FF_MT_CFG, 0xB8);
-	delay(1);
-	
-	//Threshold for free fall detection
-	I2C_WriteRegister(MMA8451Q_ADDRESS, FF_MT_THS, 0x02);
-	delay(1);
-	
-	//Number of sample for free fall detection
-	I2C_WriteRegister(MMA8451Q_ADDRESS, FF_MT_COUNT, 0x05);
-	delay(1);
-	
-	//Interrupt enable for Free fall detection
-	I2C_WriteRegister(MMA8451Q_ADDRESS, CTRL_REG4, 0x04);
-	delay(1);
-	
-	//Interrupt route to INT1
-	I2C_WriteRegister(MMA8451Q_ADDRESS, CTRL_REG5, 0x04);
-	delay(1);
-	
 	//Active MMA8451Q
 	I2C_WriteRegister(MMA8451Q_ADDRESS, CTRL_REG1, 0x01);
 	delay(1);

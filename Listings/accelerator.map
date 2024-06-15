@@ -292,8 +292,6 @@ Removing Unused input sections from the image.
     Removing accel.o(.revsh_text), (4 bytes).
     Removing accel.o(i.Get_Accel_Value), (70 bytes).
     Removing accel.o(i.MMA8451_Read), (236 bytes).
-    Removing i2c.o(.rev16_text), (4 bytes).
-    Removing i2c.o(.revsh_text), (4 bytes).
     Removing uart.o(.rev16_text), (4 bytes).
     Removing uart.o(.revsh_text), (4 bytes).
     Removing uart.o(i.UART_Init), (220 bytes).
@@ -302,6 +300,8 @@ Removing Unused input sections from the image.
     Removing uart.o(i.UART_SendInt16), (28 bytes).
     Removing uart.o(i.UART_SendString), (22 bytes).
     Removing uart.o(i.UART_SendUint8), (28 bytes).
+    Removing i2c.o(.rev16_text), (4 bytes).
+    Removing i2c.o(.revsh_text), (4 bytes).
     Removing delay.o(.rev16_text), (4 bytes).
     Removing delay.o(.revsh_text), (4 bytes).
     Removing led.o(.rev16_text), (4 bytes).
@@ -802,9 +802,9 @@ Memory Map of the image
     0x000006ac   0x000006ac   0x00000002   Code   RO          643    .text               c_p.l(use_no_semi.o)
     0x000006ae   0x000006ae   0x00000000   Code   RO          645    .text               c_p.l(indicate_semi.o)
     0x000006ae   0x000006ae   0x00000002   PAD
-    0x000006b0   0x000006b0   0x00000068   Code   RO          107    i.I2C_Init          i2c.o
-    0x00000718   0x00000718   0x000000e4   Code   RO          108    i.I2C_ReadRegister  i2c.o
-    0x000007fc   0x000007fc   0x00000084   Code   RO          109    i.I2C_WriteRegister  i2c.o
+    0x000006b0   0x000006b0   0x00000068   Code   RO          164    i.I2C_Init          i2c.o
+    0x00000718   0x00000718   0x000000e4   Code   RO          165    i.I2C_ReadRegister  i2c.o
+    0x000007fc   0x000007fc   0x00000084   Code   RO          166    i.I2C_WriteRegister  i2c.o
     0x00000880   0x00000880   0x0000005c   Code   RO          275    i.INT1_Init         switch.o
     0x000008dc   0x000008dc   0x00000138   Code   RO          315    i.LCD_Init          lcd.o
     0x00000a14   0x00000a14   0x0000004c   Code   RO          316    i.LCD_WriteChar     lcd.o

@@ -42,21 +42,6 @@ void Switch_Init(void) {
 	PTC->PDDR &= (~(uint32_t)(1 << SW2));
 }
 
-void INT1_Init(void) {
-	//Clock
-    SIM->SCGC5 |= SIM_SCGC5_PORTC_MASK;
-	
-	//Pull up
-	PORTC->PCR[INT1_PIN] |= PORT_PCR_PS_MASK;
-	PORTC->PCR[INT1_PIN] |= PORT_PCR_PE_MASK;
-	
-	
-    PORTC->PCR[INT1_PIN] |= PORT_PCR_IRQC(0xA);
-	PORTC->PCR[INT1_PIN] |= 1 << GPIO_MUX;
-	
-    PTC->PDDR &= ~(1 << INT1_PIN);
-}
-
 void PORTC_PORTD_IRQHandler(void) {
 	// Switch 1 pressed
 	if ((PTC->PDIR & (1 << SW1)) == 0) {
@@ -84,23 +69,8 @@ void PORTC_PORTD_IRQHandler(void) {
 			state = NORMAL;
 			PTE->PSOR |= 1 << RED_LED;
 			LCD_WriteChar('0', 0);
-			
-			//Clear Free fall interupt flag
-			uint8_t temp = I2C_ReadRegister(MMA8451Q_ADDRESS, 0x16);
 		}
 		// Clear interupt flag
 		PORTC->PCR[SW2] |= 1 << IRQ_FLAG;
-	}
-	
-	if (PORTC->ISFR & (1 << INT1_PIN)) {
-		//Check free fall interupt from MMA8451Q
-		if (state == NORMAL) {
-			state = FALL;
-			LCD_WriteChar('1', 0);
-		} else {
-			uint8_t temp = I2C_ReadRegister(MMA8451Q_ADDRESS, 0x16);
-		}
-		PORTC->ISFR |= (1 << INT1_PIN);
-		PORTC->PCR[INT1_PIN] |= 1 << IRQ_FLAG;
 	}
 }
