@@ -7,6 +7,7 @@
 #include "switch.h"
 
 volatile uint8_t state;
+volatile uint8_t interrupt;
 
 int main(void)
 {
@@ -15,15 +16,15 @@ int main(void)
 	Systick_Init();
 	LCD_Init();
 	I2C_Init();
+	INT1_Init();
 	MMA8451_Init();
 	
-	//Polling check, can replace with interupt check
 	while (1)
 	{
 		if (state == NORMAL) {
 			AccelData raw_data = MMA8451_Read();
 			float accel = Get_Accel_Value(raw_data);
-			if (accel > 5.5)
+			if (accel > 4.5 && interrupt == FALL)
 			{
 				state = FALL;
 				LCD_WriteChar('1', 0);

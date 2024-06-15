@@ -26,8 +26,24 @@ Project File Date:  06/14/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin'
-Build target 'Target 1'
-".\Objects\accelerator.axf" - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+assembling startup_MKL46Z4.s...
+compiling delay.c...
+compiling switch.c...
+compiling led.c...
+compiling lcd.c...
+compiling i2c.c...
+compiling main.c...
+compiling uart.c...
+compiling accel.c...
+compiling system_MKL46Z4.c...
+linking...
+.\Objects\accelerator.axf: Warning: L6914W: option ro-base ignored when using --scatter.
+.\Objects\accelerator.axf: Warning: L6914W: option rw-base ignored when using --scatter.
+.\Objects\accelerator.axf: Warning: L6340W: options first and last are ignored for link type of scattered
+Program Size: Code=5348 RO-data=316 RW-data=44 ZI-data=2144  
+Finished: 0 information, 3 warning and 0 error messages.
+".\Objects\accelerator.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -54,12 +70,12 @@ Package Vendor: NXP
 
    * Component: NXP::Device:Startup@1.0.0
       Source file:   arm/startup_MKL46Z4.s
-      Include file:  MKL46Z4.h
-      Include file:  MKL46Z4_features.h
       Include file:  fsl_device_registers.h
       Source file:   system_MKL46Z4.c
       Include file:  system_MKL46Z4.h
-Build Time Elapsed:  00:00:00
+      Include file:  MKL46Z4_features.h
+      Include file:  MKL46Z4.h
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
