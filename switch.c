@@ -96,8 +96,8 @@ void PORTC_PORTD_IRQHandler(void) {
 		PORTC->PCR[SW2] |= 1 << IRQ_FLAG;
 	}
 	
+	// Interrupt from MMA8451Q
 	if (PORTC->ISFR & (1 << INT1_PIN)) {
-		//Check free fall interupt from MMA8451Q
 		if (state != SHUTDOWN) {
 			interrupt = FALL;
 		} else {
